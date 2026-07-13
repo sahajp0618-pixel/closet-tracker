@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #FBF6EC;
+  --font-display: 'Fredoka', system-ui, -apple-system, sans-serif;
+  --font-body: 'Nunito', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  background:
+    radial-gradient(1100px 500px at 12% -8%, rgba(240,101,78,0.10), transparent 60%),
+    radial-gradient(900px 500px at 95% 0%, rgba(139,92,246,0.10), transparent 55%),
+    var(--bg);
+  background-attachment: fixed;
+  color: #2E2620;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle dotted "craft paper" texture behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(46,38,32,0.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  z-index: 0;
+}
+
+@layer components {
+  .card-surface {
+    @apply bg-paper border border-line rounded-xl2 shadow-card;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-full px-4 py-2 transition
+           active:translate-y-px disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-coral text-white hover:brightness-105 shadow-[0_4px_0_#c94631];
+  }
+  .btn-ghost {
+    @apply btn bg-white text-ink border border-line hover:bg-cream;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-cream hover:brightness-125;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-semibold
+           border transition select-none cursor-pointer;
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-ink
+           outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition;
+  }
+  .label {
+    @apply block text-sm font-semibold text-ink mb-1.5;
+  }
+}
+
+/* Custom scrollbar for the tidy panels */
+.scroll-nice::-webkit-scrollbar { width: 8px; }
+.scroll-nice::-webkit-scrollbar-thumb { background: #E4D9C6; border-radius: 999px; }
