@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'The Closet — Inventory Tracker',
+  title: 'BAPS Mandir Closet — Inventory Tracker',
   description: 'Live inventory tracker for the arts & crafts closet.',
 };
 
