@@ -309,8 +309,8 @@ function Header({ isAdmin, onLogin, onLogout, onAdd, onCats, pending, onRefresh 
           <Box size={22} />
         </div>
         <div className="mr-auto leading-tight">
-          <h1 className="font-display text-xl font-700 text-ink">The Closet</h1>
-          <p className="text-xs font-600 text-muted">Arts &amp; Crafts Inventory</p>
+          <h1 className="font-display text-xl font-700 text-ink">BAPS Mandir Closet</h1>
+          <p className="text-xs font-600 text-muted">Mandir Arts &amp; Crafts Inventory</p>
         </div>
 
         {isAdmin && (
