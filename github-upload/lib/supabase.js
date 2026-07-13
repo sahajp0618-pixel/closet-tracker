@@ -11,5 +11,5 @@ export function getServiceClient() {
       'Supabase env vars missing. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.'
     );
   }
-  return createClient(url, key, { auth: { persistSession: false } });
+  return createClient(url, key, { auth: { persistSession: false }, global: { fetch: (input, init = {}) => fetch(input, { ...init, cache: 'no-store' }) } });
 }
